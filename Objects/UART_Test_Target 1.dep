@@ -1,0 +1,21 @@
+Dependencies for Project 'UART_Test', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\startup_rvmdk.S)(0x627F676B)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\TI\TM4C123--pd "__UVISION_VERSION SETA 536"--list .\listings\startup_rvmdk.lst --xref -o .\objects\startup_rvmdk.o --depend .\objects\startup_rvmdk.d)
+F (..\..\..\..\driverlib\rvmdk\driverlib.lib)(0x61FF4FAF)()
+F (.\UART_Test.c)(0x6281D567)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\..\..\..-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\TI\TM4C123-D__UVISION_VERSION="536" -Drvmdk -DPART_TM4C123GH6PM -DTM4C123GH6PM-o .\objects\uart_test.o --omf_browse .\objects\uart_test.crf --depend .\objects\uart_test.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6026047E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x6026047C)
+I (..\..\..\..\inc/tm4c123gh6pm.h)(0x61FF4FB9)
+I (..\..\..\..\inc/hw_memmap.h)(0x61FF4FB9)
+I (..\..\..\..\driverlib/gpio.h)(0x61FF4FAE)
+I (..\..\..\..\driverlib/interrupt.h)(0x61FF4FAE)
+I (..\..\..\..\driverlib/pin_map.h)(0x61FF4FAE)
+I (..\..\..\..\driverlib/rom_map.h)(0x61FF4FAE)
+I (..\..\..\..\driverlib/sysctl.h)(0x61FF4FAF)
+I (..\..\..\..\driverlib/uart.h)(0x61FF4FAF)
+I (DisplayCommands.h)(0x627F67C1)
+I (GameBoard.h)(0x627F5420)
+I (WinnerCheck.h)(0x627DF6E2)
+F (.\DisplayCommands.h)(0x627F67C1)()
+F (.\GameBoard.h)(0x627F5420)()
+F (.\WinnerCheck.h)(0x627DF6E2)()

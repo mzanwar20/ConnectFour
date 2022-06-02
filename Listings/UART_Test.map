@@ -1,0 +1,1660 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    startup_rvmdk.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_rvmdk.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_rvmdk.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_rvmdk.o(RESET) refers to startup_rvmdk.o(STACK) for StackMem
+    startup_rvmdk.o(RESET) refers to uart_test.o(i.GPIOPortF_Handler) for GPIOPortF_Handler
+    startup_rvmdk.o(RESET) refers to __main.o(!!!main) for __main
+    startup_rvmdk.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_rvmdk.o(.text) refers to startup_rvmdk.o(HEAP) for HeapMem
+    startup_rvmdk.o(.text) refers to startup_rvmdk.o(STACK) for StackMem
+    uart_test.o(i.GPIOPortF_Handler) refers to uart_test.o(.data) for colloc
+    uart_test.o(i.GPIOPortF_Handler) refers to uart_test.o(.bss) for taken_cells
+    uart_test.o(i.Interrupt_Init) refers to uart_test.o(i.IntGlobalEnable) for IntGlobalEnable
+    uart_test.o(i.clearDisplay) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.clearDisplay) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.clearDisplay) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.displayWinner) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.displayWinner) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.displayWinner) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.displayWinner) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.getThePixelLocation) refers to uart_test.o(.data) for gameMatrix
+    uart_test.o(i.main) refers to uart_test.o(i.PortFunctionInit) for PortFunctionInit
+    uart_test.o(i.main) refers to sysctl.o(i.SysCtlClockSet) for SysCtlClockSet
+    uart_test.o(i.main) refers to uart_test.o(i.Interrupt_Init) for Interrupt_Init
+    uart_test.o(i.main) refers to sysctl.o(i.SysCtlPeripheralEnable) for SysCtlPeripheralEnable
+    uart_test.o(i.main) refers to gpio.o(i.GPIOPinConfigure) for GPIOPinConfigure
+    uart_test.o(i.main) refers to gpio.o(i.GPIOPinTypeUART) for GPIOPinTypeUART
+    uart_test.o(i.main) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.main) refers to uart.o(i.UARTConfigSetExpClk) for UARTConfigSetExpClk
+    uart_test.o(i.main) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.main) refers to uart_test.o(i.setBoard) for setBoard
+    uart_test.o(i.main) refers to uart_test.o(i.p1TurnActive) for p1TurnActive
+    uart_test.o(i.main) refers to uart_test.o(i.switchPixel) for switchPixel
+    uart_test.o(i.main) refers to uart_test.o(i.winning_condition) for winning_condition
+    uart_test.o(i.main) refers to uart_test.o(i.p1TurnDeactive) for p1TurnDeactive
+    uart_test.o(i.main) refers to uart_test.o(i.p2TurnActive) for p2TurnActive
+    uart_test.o(i.main) refers to uart_test.o(i.p2TurnDeactive) for p2TurnDeactive
+    uart_test.o(i.main) refers to uart_test.o(i.getThePixelLocation) for getThePixelLocation
+    uart_test.o(i.main) refers to uart_test.o(i.clearDisplay) for clearDisplay
+    uart_test.o(i.main) refers to uart_test.o(i.displayWinner) for displayWinner
+    uart_test.o(i.main) refers to uart_test.o(.data) for location
+    uart_test.o(i.main) refers to uart_test.o(.bss) for taken_cells
+    uart_test.o(i.p1TurnActive) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.p1TurnActive) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.p1TurnActive) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.p1TurnActive) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.p1TurnDeactive) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.p1TurnDeactive) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.p1TurnDeactive) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.p1TurnDeactive) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.p2TurnActive) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.p2TurnActive) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.p2TurnActive) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.p2TurnActive) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.p2TurnDeactive) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.p2TurnDeactive) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.p2TurnDeactive) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.p2TurnDeactive) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2313Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2313Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2313Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2313Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2313On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2313On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2313On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2313On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2318Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2318Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2318Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2318Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2318On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2318On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2318On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2318On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2323Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2323Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2323Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2323Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2323On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2323On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2323On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2323On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2328Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2328Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2328Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2328Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2328On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2328On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2328On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2328On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe233Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe233Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe233Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe233On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe233On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe233On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe233On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe238Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe238Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe238Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe238On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe238On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe238On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe238On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2813Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2813Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2813Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2813Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2813On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2813On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2813On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2813On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2818Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2818Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2818Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2818Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2818On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2818On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2818On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2818On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2823Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2823Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2823Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2823Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2823On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2823On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2823On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2823On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2828Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2828Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2828Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2828Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe2828On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe2828On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe2828On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe2828On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe283Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe283Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe283Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe283On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe283On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe283On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe283On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe288Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe288Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe288Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe288On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe288On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe288On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe288On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe313Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe313Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe313Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe313On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe313On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe313On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe313On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe318Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe318Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe318Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe318On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe318On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe318On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe318On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe323Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe323Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe323Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe323On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe323On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe323On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe323On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe328Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe328Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe328Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe328On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe328On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe328On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe328On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3313Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3313Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3313Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3313Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3313On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3313On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3313On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3313On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3318Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3318Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3318Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3318Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3318On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3318On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3318On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3318On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3323Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3323Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3323Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3323Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3323On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3323On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3323On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3323On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3328Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3328Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3328Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3328Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe3328On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe3328On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe3328On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe3328On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe333Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe333Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe333Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe333On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe333On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe333On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe333On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe338Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe338Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe338Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe338On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe338On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe338On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe338On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe33Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe33Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe33Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe33On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe33On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe33On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe33On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe38Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe38Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe38Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe38On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe38On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe38On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe38On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe813Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe813Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe813Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe813On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe813On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe813On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe813On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe818Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe818Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe818Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe818On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe818On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe818On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe818On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe823Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe823Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe823Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe823On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe823On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe823On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe823On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe828Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe828Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe828Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe828On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe828On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe828On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe828On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe83Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe83Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe83Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe83On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe83On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe83On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe83On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixe88Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe88Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe88Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe88On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixe88On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixe88On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixe88On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel313Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel313Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel313Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel313Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel313On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel313On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel313On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel313On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel318Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel318Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel318Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel318Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel318On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel318On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel318On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel318On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel323Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel323Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel323Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel323Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel323On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel323On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel323On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel323On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel328Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel328Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel328Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel328Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel328On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel328On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel328On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel328On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel33Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel33Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel33Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel33On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel33On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel33On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel33On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel38Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel38Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel38Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel38On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel38On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel38On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel38On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel813Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel813Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel813Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel813Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel813On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel813On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel813On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel813On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel818Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel818Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel818Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel818Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel818On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel818On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel818On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel818On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel823Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel823Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel823Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel823Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel823On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel823On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel823On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel823On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel828Off) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel828Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel828Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel828Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel828On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel828On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel828On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel828On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel83Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel83Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel83Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel83On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel83On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel83On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel83On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel88Off) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel88Off) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel88Off) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.pixel88On) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.pixel88On) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.pixel88On) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.pixel88On) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.setBoard) refers to uart_test.o(i.clearDisplay) for clearDisplay
+    uart_test.o(i.setBoard) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.setBoard) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.setBoard) refers to uart_test.o(i.setDefaultBoard) for setDefaultBoard
+    uart_test.o(i.setBoard) refers to uart_test.o(i.titleCluster1) for titleCluster1
+    uart_test.o(i.setBoard) refers to uart_test.o(i.titleCluster2) for titleCluster2
+    uart_test.o(i.setBoard) refers to uart_test.o(i.titleCluster3) for titleCluster3
+    uart_test.o(i.setBoard) refers to uart_test.o(i.titleClusterP1) for titleClusterP1
+    uart_test.o(i.setBoard) refers to uart_test.o(i.titleClusterP2) for titleClusterP2
+    uart_test.o(i.setDefaultBoard) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.setDefaultBoard) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.setDefaultBoard) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.setDefaultBoard) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe33On) for pixe33On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe33Off) for pixe33Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe83On) for pixe83On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe83Off) for pixe83Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel33On) for pixel33On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel33Off) for pixel33Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel83On) for pixel83On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel83Off) for pixel83Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe233On) for pixe233On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe233Off) for pixe233Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe283On) for pixe283On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe283Off) for pixe283Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe333On) for pixe333On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe333Off) for pixe333Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe38On) for pixe38On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe38Off) for pixe38Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe88On) for pixe88On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe88Off) for pixe88Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel38On) for pixel38On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel38Off) for pixel38Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel88On) for pixel88On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel88Off) for pixel88Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe238On) for pixe238On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe238Off) for pixe238Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe288On) for pixe288On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe288Off) for pixe288Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe338On) for pixe338On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe338Off) for pixe338Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe313On) for pixe313On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe313Off) for pixe313Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe813On) for pixe813On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe813Off) for pixe813Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel313On) for pixel313On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel313Off) for pixel313Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel813On) for pixel813On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel813Off) for pixel813Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2313On) for pixe2313On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2313Off) for pixe2313Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2813On) for pixe2813On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2813Off) for pixe2813Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3313On) for pixe3313On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3313Off) for pixe3313Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe318On) for pixe318On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe318Off) for pixe318Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe818On) for pixe818On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe818Off) for pixe818Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel318On) for pixel318On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel318Off) for pixel318Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel818On) for pixel818On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel818Off) for pixel818Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2318On) for pixe2318On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2318Off) for pixe2318Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2818On) for pixe2818On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2818Off) for pixe2818Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3318On) for pixe3318On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3318Off) for pixe3318Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe323On) for pixe323On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe323Off) for pixe323Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe823On) for pixe823On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe823Off) for pixe823Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel323On) for pixel323On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel323Off) for pixel323Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel823On) for pixel823On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel823Off) for pixel823Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2323On) for pixe2323On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2323Off) for pixe2323Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2823On) for pixe2823On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2823Off) for pixe2823Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3323On) for pixe3323On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3323Off) for pixe3323Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe328On) for pixe328On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe328Off) for pixe328Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe828On) for pixe828On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe828Off) for pixe828Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel328On) for pixel328On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel328Off) for pixel328Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel828On) for pixel828On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixel828Off) for pixel828Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2328On) for pixe2328On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2328Off) for pixe2328Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2828On) for pixe2828On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe2828Off) for pixe2828Off
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3328On) for pixe3328On
+    uart_test.o(i.switchPixel) refers to uart_test.o(i.pixe3328Off) for pixe3328Off
+    uart_test.o(i.titleCluster1) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.titleCluster1) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.titleCluster1) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.titleCluster1) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.titleCluster2) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.titleCluster2) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.titleCluster2) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.titleCluster2) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.titleCluster3) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.titleCluster3) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.titleCluster3) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.titleCluster3) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.titleClusterP1) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.titleClusterP1) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.titleClusterP1) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.titleClusterP1) refers to sysctl.o(.emb_text) for SysCtlDelay
+    uart_test.o(i.titleClusterP2) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
+    uart_test.o(i.titleClusterP2) refers to uart.o(i.UARTCharPut) for UARTCharPut
+    uart_test.o(i.titleClusterP2) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    uart_test.o(i.titleClusterP2) refers to sysctl.o(.emb_text) for SysCtlDelay
+    gpio.o(i.GPIOIntRegister) refers to gpio.o(i._GPIOIntNumberGet) for _GPIOIntNumberGet
+    gpio.o(i.GPIOIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    gpio.o(i.GPIOIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    gpio.o(i.GPIOIntRegisterPin) refers to gpio.o(i._GPIOIntNumberGet) for _GPIOIntNumberGet
+    gpio.o(i.GPIOIntRegisterPin) refers to interrupt.o(i.IntRegister) for IntRegister
+    gpio.o(i.GPIOIntRegisterPin) refers to interrupt.o(i.IntEnable) for IntEnable
+    gpio.o(i.GPIOIntUnregister) refers to gpio.o(i._GPIOIntNumberGet) for _GPIOIntNumberGet
+    gpio.o(i.GPIOIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    gpio.o(i.GPIOIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    gpio.o(i.GPIOIntUnregisterPin) refers to gpio.o(i._GPIOIntNumberGet) for _GPIOIntNumberGet
+    gpio.o(i.GPIOIntUnregisterPin) refers to interrupt.o(i.IntDisable) for IntDisable
+    gpio.o(i.GPIOIntUnregisterPin) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    gpio.o(i.GPIOPinConfigure) refers to gpio.o(.constdata) for .constdata
+    gpio.o(i.GPIOPinTypeADC) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeADC) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeCAN) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeCAN) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeComparator) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeComparator) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeComparatorOutput) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeComparatorOutput) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeDIVSCLK) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeDIVSCLK) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeEPI) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeEPI) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeEthernetLED) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeEthernetLED) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeEthernetMII) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeEthernetMII) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOInput) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeGPIOInput) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOOutput) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOOutput) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeGPIOOutputOD) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOOutputOD) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeHibernateRTCCLK) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeHibernateRTCCLK) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeI2C) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeI2C) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeI2CSCL) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeI2CSCL) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeLCD) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeLCD) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeOneWire) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeOneWire) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypePWM) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypePWM) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeQEI) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeQEI) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeSSI) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeSSI) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeTimer) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeTimer) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeTrace) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeTrace) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeUART) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeUART) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeUSBAnalog) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeUSBAnalog) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeUSBDigital) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeUSBDigital) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeWakeHigh) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeWakeHigh) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeWakeLow) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeWakeLow) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i._GPIOIntNumberGet) refers to gpio.o(.constdata) for .constdata
+    sysctl.o(i.SysCtlClockFreqSet) refers to sysctl.o(.constdata) for .constdata
+    sysctl.o(i.SysCtlClockGet) refers to sysctl.o(.constdata) for .constdata
+    sysctl.o(i.SysCtlClockSet) refers to sysctl.o(.emb_text) for SysCtlDelay
+    sysctl.o(i.SysCtlDeepSleep) refers to cpu.o(.emb_text) for CPUwfi
+    sysctl.o(i.SysCtlIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    sysctl.o(i.SysCtlIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    sysctl.o(i.SysCtlIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    sysctl.o(i.SysCtlIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    sysctl.o(i.SysCtlSleep) refers to cpu.o(.emb_text) for CPUwfi
+    sysctl.o(i.SysCtlVCOGet) refers to sysctl.o(.constdata) for .constdata
+    uart.o(i.UARTIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    uart.o(i.UARTIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    uart.o(i.UARTIntRegister) refers to uart.o(.constdata) for .constdata
+    uart.o(i.UARTIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    uart.o(i.UARTIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    uart.o(i.UARTIntUnregister) refers to uart.o(.constdata) for .constdata
+    interrupt.o(i.IntDisable) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntEnable) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntIsEnabled) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntMasterDisable) refers to cpu.o(.emb_text) for CPUcpsid
+    interrupt.o(i.IntMasterEnable) refers to cpu.o(.emb_text) for CPUcpsie
+    interrupt.o(i.IntPendClear) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPendSet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityGet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityGroupingGet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityGroupingSet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityMaskGet) refers to cpu.o(.emb_text) for CPUbasepriGet
+    interrupt.o(i.IntPriorityMaskSet) refers to cpu.o(.emb_text) for CPUbasepriSet
+    interrupt.o(i.IntPrioritySet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntRegister) refers to interrupt.o(vtable) for vtable
+    interrupt.o(i.IntUnregister) refers to interrupt.o(i._IntDefaultHandler) for _IntDefaultHandler
+    interrupt.o(i.IntUnregister) refers to interrupt.o(vtable) for vtable
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to uart_test.o(i.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_rvmdk.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000001) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000001) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_fini_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000011) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000012) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing gpio.o(i.GPIOADCTriggerDisable), (14 bytes).
+    Removing gpio.o(i.GPIOADCTriggerEnable), (12 bytes).
+    Removing gpio.o(i.GPIODMATriggerDisable), (14 bytes).
+    Removing gpio.o(i.GPIODMATriggerEnable), (12 bytes).
+    Removing gpio.o(i.GPIODirModeGet), (34 bytes).
+    Removing gpio.o(i.GPIOIntClear), (6 bytes).
+    Removing gpio.o(i.GPIOIntDisable), (14 bytes).
+    Removing gpio.o(i.GPIOIntEnable), (12 bytes).
+    Removing gpio.o(i.GPIOIntRegister), (26 bytes).
+    Removing gpio.o(i.GPIOIntRegisterPin), (30 bytes).
+    Removing gpio.o(i.GPIOIntStatus), (14 bytes).
+    Removing gpio.o(i.GPIOIntTypeGet), (70 bytes).
+    Removing gpio.o(i.GPIOIntTypeSet), (80 bytes).
+    Removing gpio.o(i.GPIOIntUnregister), (22 bytes).
+    Removing gpio.o(i.GPIOIntUnregisterPin), (26 bytes).
+    Removing gpio.o(i.GPIOPadConfigGet), (248 bytes).
+    Removing gpio.o(i.GPIOPinRead), (6 bytes).
+    Removing gpio.o(i.GPIOPinTypeADC), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeCAN), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeComparator), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeComparatorOutput), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeDIVSCLK), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeEPI), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeEthernetLED), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeEthernetMII), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeGPIOInput), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeGPIOOutput), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeGPIOOutputOD), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeHibernateRTCCLK), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeI2C), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeI2CSCL), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeLCD), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeOneWire), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypePWM), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeQEI), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeSSI), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeTimer), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeTrace), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeUSBAnalog), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeUSBDigital), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeWakeHigh), (30 bytes).
+    Removing gpio.o(i.GPIOPinTypeWakeLow), (30 bytes).
+    Removing gpio.o(i.GPIOPinWakeStatus), (6 bytes).
+    Removing gpio.o(i.GPIOPinWrite), (6 bytes).
+    Removing gpio.o(i.GPIOUnlockPin), (24 bytes).
+    Removing gpio.o(i._GPIOIntNumberGet), (80 bytes).
+    Removing sysctl.o(i.SysCtlAltClkConfig), (12 bytes).
+    Removing sysctl.o(i.SysCtlClockFreqSet), (740 bytes).
+    Removing sysctl.o(i.SysCtlClockOutConfig), (20 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleep), (32 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleepClockConfigSet), (112 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleepClockSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleepPowerSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlFlashSectorSizeGet), (56 bytes).
+    Removing sysctl.o(i.SysCtlFlashSizeGet), (56 bytes).
+    Removing sysctl.o(i.SysCtlGPIOAHBDisable), (28 bytes).
+    Removing sysctl.o(i.SysCtlGPIOAHBEnable), (24 bytes).
+    Removing sysctl.o(i.SysCtlIntClear), (12 bytes).
+    Removing sysctl.o(i.SysCtlIntDisable), (16 bytes).
+    Removing sysctl.o(i.SysCtlIntEnable), (16 bytes).
+    Removing sysctl.o(i.SysCtlIntRegister), (20 bytes).
+    Removing sysctl.o(i.SysCtlIntStatus), (16 bytes).
+    Removing sysctl.o(i.SysCtlIntUnregister), (18 bytes).
+    Removing sysctl.o(i.SysCtlLDODeepSleepGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlLDODeepSleepSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlLDOSleepGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlLDOSleepSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlMOSCConfigSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlNMIClear), (16 bytes).
+    Removing sysctl.o(i.SysCtlNMIStatus), (12 bytes).
+    Removing sysctl.o(i.SysCtlPIOSCCalibrate), (76 bytes).
+    Removing sysctl.o(i.SysCtlPWMClockGet), (24 bytes).
+    Removing sysctl.o(i.SysCtlPWMClockSet), (20 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralClockGating), (68 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralDeepSleepDisable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralDeepSleepEnable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralDisable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralPowerOff), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralPowerOn), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralPresent), (44 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralReady), (44 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralReset), (60 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralSleepDisable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralSleepEnable), (40 bytes).
+    Removing sysctl.o(i.SysCtlReset), (16 bytes).
+    Removing sysctl.o(i.SysCtlResetBehaviorGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlResetBehaviorSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlResetCauseClear), (16 bytes).
+    Removing sysctl.o(i.SysCtlResetCauseGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlSRAMSizeGet), (16 bytes).
+    Removing sysctl.o(i.SysCtlSleep), (4 bytes).
+    Removing sysctl.o(i.SysCtlSleepPowerSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlUSBPLLDisable), (16 bytes).
+    Removing sysctl.o(i.SysCtlUSBPLLEnable), (16 bytes).
+    Removing sysctl.o(i.SysCtlVCOGet), (120 bytes).
+    Removing sysctl.o(i.SysCtlVoltageEventClear), (16 bytes).
+    Removing sysctl.o(i.SysCtlVoltageEventConfig), (12 bytes).
+    Removing sysctl.o(i.SysCtlVoltageEventStatus), (12 bytes).
+    Removing uart.o(i.UART9BitAddrSend), (38 bytes).
+    Removing uart.o(i.UART9BitAddrSet), (10 bytes).
+    Removing uart.o(i.UART9BitDisable), (14 bytes).
+    Removing uart.o(i.UART9BitEnable), (14 bytes).
+    Removing uart.o(i.UARTBreakCtl), (18 bytes).
+    Removing uart.o(i.UARTBusy), (8 bytes).
+    Removing uart.o(i.UARTCharGet), (12 bytes).
+    Removing uart.o(i.UARTCharGetNonBlocking), (16 bytes).
+    Removing uart.o(i.UARTCharPutNonBlocking), (16 bytes).
+    Removing uart.o(i.UARTCharsAvail), (10 bytes).
+    Removing uart.o(i.UARTClockSourceGet), (6 bytes).
+    Removing uart.o(i.UARTClockSourceSet), (6 bytes).
+    Removing uart.o(i.UARTConfigGetExpClk), (46 bytes).
+    Removing uart.o(i.UARTDMADisable), (10 bytes).
+    Removing uart.o(i.UARTDMAEnable), (8 bytes).
+    Removing uart.o(i.UARTDisable), (30 bytes).
+    Removing uart.o(i.UARTDisableSIR), (10 bytes).
+    Removing uart.o(i.UARTEnable), (20 bytes).
+    Removing uart.o(i.UARTEnableSIR), (18 bytes).
+    Removing uart.o(i.UARTFIFODisable), (10 bytes).
+    Removing uart.o(i.UARTFIFOEnable), (10 bytes).
+    Removing uart.o(i.UARTFIFOLevelGet), (16 bytes).
+    Removing uart.o(i.UARTFIFOLevelSet), (6 bytes).
+    Removing uart.o(i.UARTFlowControlGet), (8 bytes).
+    Removing uart.o(i.UARTFlowControlSet), (12 bytes).
+    Removing uart.o(i.UARTIntClear), (4 bytes).
+    Removing uart.o(i.UARTIntDisable), (10 bytes).
+    Removing uart.o(i.UARTIntEnable), (8 bytes).
+    Removing uart.o(i.UARTIntRegister), (88 bytes).
+    Removing uart.o(i.UARTIntStatus), (10 bytes).
+    Removing uart.o(i.UARTIntUnregister), (88 bytes).
+    Removing uart.o(i.UARTLoopbackEnable), (10 bytes).
+    Removing uart.o(i.UARTModemControlClear), (14 bytes).
+    Removing uart.o(i.UARTModemControlGet), (8 bytes).
+    Removing uart.o(i.UARTModemControlSet), (12 bytes).
+    Removing uart.o(i.UARTModemStatusGet), (10 bytes).
+    Removing uart.o(i.UARTParityModeGet), (8 bytes).
+    Removing uart.o(i.UARTParityModeSet), (12 bytes).
+    Removing uart.o(i.UARTRxErrorClear), (6 bytes).
+    Removing uart.o(i.UARTRxErrorGet), (8 bytes).
+    Removing uart.o(i.UARTSmartCardDisable), (10 bytes).
+    Removing uart.o(i.UARTSmartCardEnable), (22 bytes).
+    Removing uart.o(i.UARTSpaceAvail), (10 bytes).
+    Removing uart.o(i.UARTTxIntModeGet), (8 bytes).
+    Removing uart.o(i.UARTTxIntModeSet), (12 bytes).
+    Removing uart.o(.constdata), (128 bytes).
+    Removing cpu.o(.emb_text), (38 bytes).
+    Removing interrupt.o(i.IntDisable), (100 bytes).
+    Removing interrupt.o(i.IntEnable), (100 bytes).
+    Removing interrupt.o(i.IntIsEnabled), (96 bytes).
+    Removing interrupt.o(i.IntMasterDisable), (14 bytes).
+    Removing interrupt.o(i.IntMasterEnable), (14 bytes).
+    Removing interrupt.o(i.IntPendClear), (68 bytes).
+    Removing interrupt.o(i.IntPendSet), (84 bytes).
+    Removing interrupt.o(i.IntPriorityGet), (28 bytes).
+    Removing interrupt.o(i.IntPriorityGroupingGet), (36 bytes).
+    Removing interrupt.o(i.IntPriorityGroupingSet), (28 bytes).
+    Removing interrupt.o(i.IntPriorityMaskGet), (4 bytes).
+    Removing interrupt.o(i.IntPriorityMaskSet), (4 bytes).
+    Removing interrupt.o(i.IntPrioritySet), (40 bytes).
+    Removing interrupt.o(i.IntRegister), (52 bytes).
+    Removing interrupt.o(i.IntTrigger), (12 bytes).
+    Removing interrupt.o(i.IntUnregister), (20 bytes).
+    Removing interrupt.o(i._IntDefaultHandler), (2 bytes).
+    Removing interrupt.o(.constdata), (268 bytes).
+    Removing interrupt.o(vtable), (620 bytes).
+
+164 unused section(s) (total 6144 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      648  startup_rvmdk.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/memcpset.s                       0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
+    UART_Test.c                              0x00000000   Number         0  uart_test.o ABSOLUTE
+    cpu.c                                    0x00000000   Number         0  cpu.o ABSOLUTE
+    cpu.c                                    0x00000000   Number         0  cpu.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    gpio.c                                   0x00000000   Number         0  gpio.o ABSOLUTE
+    interrupt.c                              0x00000000   Number         0  interrupt.o ABSOLUTE
+    startup_rvmdk.S                          0x00000000   Number         0  startup_rvmdk.o ABSOLUTE
+    sysctl.c                                 0x00000000   Number         0  sysctl.o ABSOLUTE
+    sysctl.c                                 0x00000000   Number         0  sysctl.o ABSOLUTE
+    uart.c                                   0x00000000   Number         0  uart.o ABSOLUTE
+    $v0                                      0x0000026c   Number         0  startup_rvmdk.o(RESET)
+    NmiSR                                    0x00000281   Thumb Code     0  startup_rvmdk.o(RESET)
+    FaultISR                                 0x00000283   Thumb Code     0  startup_rvmdk.o(RESET)
+    IntDefaultHandler                        0x00000285   Thumb Code     0  startup_rvmdk.o(RESET)
+    !!!main                                  0x00000288   Section        8  __main.o(!!!main)
+    !!!scatter                               0x00000290   Section       52  __scatter.o(!!!scatter)
+    !!handler_copy                           0x000002c4   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x000002e0   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x000002fc   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000001          0x000002fe   Section        4  libinit2.o(.ARM.Collect$$libinit$$00000001)
+    .ARM.Collect$$libinit$$00000004          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$0000000A          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x00000302   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x00000302   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x00000304   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000006      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    .ARM.Collect$$libshutdown$$00000009      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    .ARM.Collect$$libshutdown$$0000000C      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000E      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    .ARM.Collect$$libshutdown$$00000011      0x00000306   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000011)
+    .ARM.Collect$$libshutdown$$00000012      0x00000306   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000012)
+    .ARM.Collect$$rtentry$$00000000          0x00000308   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x00000308   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x00000308   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x0000030e   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x0000030e   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x00000312   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x00000312   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x0000031a   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x0000031c   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x0000031c   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x00000320   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .emb_text                                0x00000328   Section        6  sysctl.o(.emb_text)
+    $v0                                      0x00000328   Number         0  sysctl.o(.emb_text)
+    .text                                    0x00000330   Section       24  startup_rvmdk.o(.text)
+    $v0                                      0x00000330   Number         0  startup_rvmdk.o(.text)
+    .text                                    0x00000348   Section      100  rt_memcpy_w.o(.text)
+    .text                                    0x000003ac   Section        0  heapauxi.o(.text)
+    .text                                    0x000003b2   Section       74  sys_stackheap_outer.o(.text)
+    .text                                    0x000003fc   Section        0  exit.o(.text)
+    .text                                    0x00000410   Section        8  libspace.o(.text)
+    .text                                    0x00000418   Section        0  sys_exit.o(.text)
+    .text                                    0x00000424   Section        2  use_no_semi.o(.text)
+    .text                                    0x00000426   Section        0  indicate_semi.o(.text)
+    i.GPIODirModeSet                         0x00000426   Section        0  gpio.o(i.GPIODirModeSet)
+    i.GPIOPadConfigSet                       0x00000450   Section        0  gpio.o(i.GPIOPadConfigSet)
+    i.GPIOPinConfigure                       0x000005c0   Section        0  gpio.o(i.GPIOPinConfigure)
+    i.GPIOPinTypeUART                        0x00000604   Section        0  gpio.o(i.GPIOPinTypeUART)
+    i.GPIOPortF_Handler                      0x00000620   Section        0  uart_test.o(i.GPIOPortF_Handler)
+    i.IntGlobalEnable                        0x00000694   Section        0  uart_test.o(i.IntGlobalEnable)
+    i.Interrupt_Init                         0x00000698   Section        0  uart_test.o(i.Interrupt_Init)
+    i.PortFunctionInit                       0x000006fc   Section        0  uart_test.o(i.PortFunctionInit)
+    i.SysCtlClockGet                         0x00000760   Section        0  sysctl.o(i.SysCtlClockGet)
+    i.SysCtlClockSet                         0x000008b4   Section        0  sysctl.o(i.SysCtlClockSet)
+    i.SysCtlPeripheralEnable                 0x000009d4   Section        0  sysctl.o(i.SysCtlPeripheralEnable)
+    i.UARTCharPut                            0x000009fc   Section        0  uart.o(i.UARTCharPut)
+    i.UARTConfigSetExpClk                    0x00000a08   Section        0  uart.o(i.UARTConfigSetExpClk)
+    i.clearDisplay                           0x00000a78   Section        0  uart_test.o(i.clearDisplay)
+    i.displayWinner                          0x00000abc   Section        0  uart_test.o(i.displayWinner)
+    i.getThePixelLocation                    0x00000ce0   Section        0  uart_test.o(i.getThePixelLocation)
+    i.main                                   0x00000cf8   Section        0  uart_test.o(i.main)
+    i.p1TurnActive                           0x00000f78   Section        0  uart_test.o(i.p1TurnActive)
+    i.p1TurnDeactive                         0x00000fdc   Section        0  uart_test.o(i.p1TurnDeactive)
+    i.p2TurnActive                           0x00001040   Section        0  uart_test.o(i.p2TurnActive)
+    i.p2TurnDeactive                         0x000010a4   Section        0  uart_test.o(i.p2TurnDeactive)
+    i.pixe2313Off                            0x00001108   Section        0  uart_test.o(i.pixe2313Off)
+    i.pixe2313On                             0x000011b8   Section        0  uart_test.o(i.pixe2313On)
+    i.pixe2318Off                            0x0000127c   Section        0  uart_test.o(i.pixe2318Off)
+    i.pixe2318On                             0x0000132c   Section        0  uart_test.o(i.pixe2318On)
+    i.pixe2323Off                            0x000013f0   Section        0  uart_test.o(i.pixe2323Off)
+    i.pixe2323On                             0x000014a0   Section        0  uart_test.o(i.pixe2323On)
+    i.pixe2328Off                            0x00001564   Section        0  uart_test.o(i.pixe2328Off)
+    i.pixe2328On                             0x00001614   Section        0  uart_test.o(i.pixe2328On)
+    i.pixe233Off                             0x000016d8   Section        0  uart_test.o(i.pixe233Off)
+    i.pixe233On                              0x0000178c   Section        0  uart_test.o(i.pixe233On)
+    i.pixe238Off                             0x00001850   Section        0  uart_test.o(i.pixe238Off)
+    i.pixe238On                              0x00001904   Section        0  uart_test.o(i.pixe238On)
+    i.pixe2813Off                            0x000019c8   Section        0  uart_test.o(i.pixe2813Off)
+    i.pixe2813On                             0x00001a78   Section        0  uart_test.o(i.pixe2813On)
+    i.pixe2818Off                            0x00001b3c   Section        0  uart_test.o(i.pixe2818Off)
+    i.pixe2818On                             0x00001bec   Section        0  uart_test.o(i.pixe2818On)
+    i.pixe2823Off                            0x00001cb0   Section        0  uart_test.o(i.pixe2823Off)
+    i.pixe2823On                             0x00001d60   Section        0  uart_test.o(i.pixe2823On)
+    i.pixe2828Off                            0x00001e24   Section        0  uart_test.o(i.pixe2828Off)
+    i.pixe2828On                             0x00001ed4   Section        0  uart_test.o(i.pixe2828On)
+    i.pixe283Off                             0x00001f98   Section        0  uart_test.o(i.pixe283Off)
+    i.pixe283On                              0x0000204c   Section        0  uart_test.o(i.pixe283On)
+    i.pixe288Off                             0x00002110   Section        0  uart_test.o(i.pixe288Off)
+    i.pixe288On                              0x000021c4   Section        0  uart_test.o(i.pixe288On)
+    i.pixe313Off                             0x00002288   Section        0  uart_test.o(i.pixe313Off)
+    i.pixe313On                              0x0000233c   Section        0  uart_test.o(i.pixe313On)
+    i.pixe318Off                             0x00002400   Section        0  uart_test.o(i.pixe318Off)
+    i.pixe318On                              0x000024b4   Section        0  uart_test.o(i.pixe318On)
+    i.pixe323Off                             0x00002578   Section        0  uart_test.o(i.pixe323Off)
+    i.pixe323On                              0x0000262c   Section        0  uart_test.o(i.pixe323On)
+    i.pixe328Off                             0x000026f0   Section        0  uart_test.o(i.pixe328Off)
+    i.pixe328On                              0x000027a4   Section        0  uart_test.o(i.pixe328On)
+    i.pixe3313Off                            0x00002868   Section        0  uart_test.o(i.pixe3313Off)
+    i.pixe3313On                             0x00002918   Section        0  uart_test.o(i.pixe3313On)
+    i.pixe3318Off                            0x000029dc   Section        0  uart_test.o(i.pixe3318Off)
+    i.pixe3318On                             0x00002a8c   Section        0  uart_test.o(i.pixe3318On)
+    i.pixe3323Off                            0x00002b50   Section        0  uart_test.o(i.pixe3323Off)
+    i.pixe3323On                             0x00002c00   Section        0  uart_test.o(i.pixe3323On)
+    i.pixe3328Off                            0x00002cc4   Section        0  uart_test.o(i.pixe3328Off)
+    i.pixe3328On                             0x00002d74   Section        0  uart_test.o(i.pixe3328On)
+    i.pixe333Off                             0x00002e38   Section        0  uart_test.o(i.pixe333Off)
+    i.pixe333On                              0x00002eec   Section        0  uart_test.o(i.pixe333On)
+    i.pixe338Off                             0x00002fb0   Section        0  uart_test.o(i.pixe338Off)
+    i.pixe338On                              0x00003064   Section        0  uart_test.o(i.pixe338On)
+    i.pixe33Off                              0x00003128   Section        0  uart_test.o(i.pixe33Off)
+    i.pixe33On                               0x000031dc   Section        0  uart_test.o(i.pixe33On)
+    i.pixe38Off                              0x0000329c   Section        0  uart_test.o(i.pixe38Off)
+    i.pixe38On                               0x00003350   Section        0  uart_test.o(i.pixe38On)
+    i.pixe813Off                             0x00003410   Section        0  uart_test.o(i.pixe813Off)
+    i.pixe813On                              0x000034c4   Section        0  uart_test.o(i.pixe813On)
+    i.pixe818Off                             0x00003588   Section        0  uart_test.o(i.pixe818Off)
+    i.pixe818On                              0x0000363c   Section        0  uart_test.o(i.pixe818On)
+    i.pixe823Off                             0x00003700   Section        0  uart_test.o(i.pixe823Off)
+    i.pixe823On                              0x000037b4   Section        0  uart_test.o(i.pixe823On)
+    i.pixe828Off                             0x00003878   Section        0  uart_test.o(i.pixe828Off)
+    i.pixe828On                              0x0000392c   Section        0  uart_test.o(i.pixe828On)
+    i.pixe83Off                              0x000039f0   Section        0  uart_test.o(i.pixe83Off)
+    i.pixe83On                               0x00003aa4   Section        0  uart_test.o(i.pixe83On)
+    i.pixe88Off                              0x00003b64   Section        0  uart_test.o(i.pixe88Off)
+    i.pixe88On                               0x00003c18   Section        0  uart_test.o(i.pixe88On)
+    i.pixel313Off                            0x00003cd8   Section        0  uart_test.o(i.pixel313Off)
+    i.pixel313On                             0x00003d88   Section        0  uart_test.o(i.pixel313On)
+    i.pixel318Off                            0x00003e4c   Section        0  uart_test.o(i.pixel318Off)
+    i.pixel318On                             0x00003efc   Section        0  uart_test.o(i.pixel318On)
+    i.pixel323Off                            0x00003fc0   Section        0  uart_test.o(i.pixel323Off)
+    i.pixel323On                             0x00004070   Section        0  uart_test.o(i.pixel323On)
+    i.pixel328Off                            0x00004134   Section        0  uart_test.o(i.pixel328Off)
+    i.pixel328On                             0x000041e4   Section        0  uart_test.o(i.pixel328On)
+    i.pixel33Off                             0x000042a8   Section        0  uart_test.o(i.pixel33Off)
+    i.pixel33On                              0x0000435c   Section        0  uart_test.o(i.pixel33On)
+    i.pixel38Off                             0x00004420   Section        0  uart_test.o(i.pixel38Off)
+    i.pixel38On                              0x000044d4   Section        0  uart_test.o(i.pixel38On)
+    i.pixel813Off                            0x00004598   Section        0  uart_test.o(i.pixel813Off)
+    i.pixel813On                             0x00004648   Section        0  uart_test.o(i.pixel813On)
+    i.pixel818Off                            0x0000470c   Section        0  uart_test.o(i.pixel818Off)
+    i.pixel818On                             0x000047bc   Section        0  uart_test.o(i.pixel818On)
+    i.pixel823Off                            0x00004880   Section        0  uart_test.o(i.pixel823Off)
+    i.pixel823On                             0x00004930   Section        0  uart_test.o(i.pixel823On)
+    i.pixel828Off                            0x000049f4   Section        0  uart_test.o(i.pixel828Off)
+    i.pixel828On                             0x00004aa4   Section        0  uart_test.o(i.pixel828On)
+    i.pixel83Off                             0x00004b68   Section        0  uart_test.o(i.pixel83Off)
+    i.pixel83On                              0x00004c1c   Section        0  uart_test.o(i.pixel83On)
+    i.pixel88Off                             0x00004ce0   Section        0  uart_test.o(i.pixel88Off)
+    i.pixel88On                              0x00004d94   Section        0  uart_test.o(i.pixel88On)
+    i.setBoard                               0x00004e58   Section        0  uart_test.o(i.setBoard)
+    i.setDefaultBoard                        0x00004e88   Section        0  uart_test.o(i.setDefaultBoard)
+    i.switchPixel                            0x00005148   Section        0  uart_test.o(i.switchPixel)
+    i.titleCluster1                          0x000055ac   Section        0  uart_test.o(i.titleCluster1)
+    i.titleCluster2                          0x00005a5c   Section        0  uart_test.o(i.titleCluster2)
+    i.titleCluster3                          0x00005e48   Section        0  uart_test.o(i.titleCluster3)
+    i.titleClusterP1                         0x00005fb8   Section        0  uart_test.o(i.titleClusterP1)
+    i.titleClusterP2                         0x0000623c   Section        0  uart_test.o(i.titleClusterP2)
+    i.winning_condition                      0x000064c0   Section        0  uart_test.o(i.winning_condition)
+    x$fpl$fpinit                             0x000071d8   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x000071d8   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x000071e4   Section      552  gpio.o(.constdata)
+    g_ppui32GPIOIntMapBlizzard               0x000071e4   Data         192  gpio.o(.constdata)
+    g_ppui32GPIOIntMapSnowflake              0x000072a4   Data         216  gpio.o(.constdata)
+    g_pui32GPIOBaseAddrs                     0x0000737c   Data         144  gpio.o(.constdata)
+    .constdata                               0x0000740c   Section      596  sysctl.o(.constdata)
+    g_pui32VCOFrequencies                    0x0000740c   Data           8  sysctl.o(.constdata)
+    g_pui32Xtals                             0x00007414   Data         108  sysctl.o(.constdata)
+    g_pppui32XTALtoVCO                       0x00007480   Data         432  sysctl.o(.constdata)
+    g_sXTALtoMEMTIM                          0x00007630   Data          48  sysctl.o(.constdata)
+    .data                                    0x20000000   Section      208  uart_test.o(.data)
+    .bss                                     0x200000d0   Section      336  uart_test.o(.bss)
+    .bss                                     0x20000220   Section       96  libspace.o(.bss)
+    HEAP                                     0x20000280   Section        0  startup_rvmdk.o(HEAP)
+    STACK                                    0x20000280   Section      256  startup_rvmdk.o(STACK)
+    HeapMem                                  0x20000280   Data           0  startup_rvmdk.o(HEAP)
+    StackMem                                 0x20000280   Data           0  startup_rvmdk.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  uart_test.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup_rvmdk.o(RESET)
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_fini_                               - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup_rvmdk.o(RESET)
+    __main                                   0x00000289   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x00000291   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x00000291   Thumb Code    44  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x00000291   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x0000029f   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x000002c5   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x000002e1   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x000002fd   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_fp_1                       0x000002ff   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000001)
+    __rt_lib_init_alloca_1                   0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_1                      0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_exceptions_1               0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_trap_1                  0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_preinit_1                  0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_rand_1                     0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_return                     0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_init_signal_1                   0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x00000303   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_shutdown                        0x00000305   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_fini_1                 0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000009)
+    __rt_lib_shutdown_heap_1                 0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000011)
+    __rt_lib_shutdown_return                 0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000012)
+    __rt_lib_shutdown_signal_1               0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_lib_shutdown_stdio_1                0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000006)
+    __rt_lib_shutdown_user_alloc_1           0x00000307   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E)
+    __rt_entry                               0x00000309   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x00000309   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x00000309   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x0000030f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x0000030f   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x00000313   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x00000313   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x0000031b   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x0000031d   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x0000031d   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x00000321   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    SysCtlDelay                              0x00000329   Thumb Code     6  sysctl.o(.emb_text)
+    __user_initial_stackheap                 0x00000331   Thumb Code     0  startup_rvmdk.o(.text)
+    __aeabi_memcpy4                          0x00000349   Thumb Code     0  rt_memcpy_w.o(.text)
+    __aeabi_memcpy8                          0x00000349   Thumb Code     0  rt_memcpy_w.o(.text)
+    __rt_memcpy_w                            0x00000349   Thumb Code   100  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes_aligned                0x00000391   Thumb Code     0  rt_memcpy_w.o(.text)
+    __use_two_region_memory                  0x000003ad   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x000003af   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x000003b1   Thumb Code     2  heapauxi.o(.text)
+    __user_setup_stackheap                   0x000003b3   Thumb Code    74  sys_stackheap_outer.o(.text)
+    exit                                     0x000003fd   Thumb Code    18  exit.o(.text)
+    __user_libspace                          0x00000411   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x00000411   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x00000411   Thumb Code     0  libspace.o(.text)
+    _sys_exit                                0x00000419   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x00000425   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x00000425   Thumb Code     2  use_no_semi.o(.text)
+    GPIODirModeSet                           0x00000427   Thumb Code    40  gpio.o(i.GPIODirModeSet)
+    __semihosting_library_function           0x00000427   Thumb Code     0  indicate_semi.o(.text)
+    GPIOPadConfigSet                         0x00000451   Thumb Code   354  gpio.o(i.GPIOPadConfigSet)
+    GPIOPinConfigure                         0x000005c1   Thumb Code    60  gpio.o(i.GPIOPinConfigure)
+    GPIOPinTypeUART                          0x00000605   Thumb Code    28  gpio.o(i.GPIOPinTypeUART)
+    GPIOPortF_Handler                        0x00000621   Thumb Code    98  uart_test.o(i.GPIOPortF_Handler)
+    IntGlobalEnable                          0x00000695   Thumb Code     4  uart_test.o(i.IntGlobalEnable)
+    Interrupt_Init                           0x00000699   Thumb Code    88  uart_test.o(i.Interrupt_Init)
+    PortFunctionInit                         0x000006fd   Thumb Code    80  uart_test.o(i.PortFunctionInit)
+    SysCtlClockGet                           0x00000761   Thumb Code   304  sysctl.o(i.SysCtlClockGet)
+    SysCtlClockSet                           0x000008b5   Thumb Code   270  sysctl.o(i.SysCtlClockSet)
+    SysCtlPeripheralEnable                   0x000009d5   Thumb Code    36  sysctl.o(i.SysCtlPeripheralEnable)
+    UARTCharPut                              0x000009fd   Thumb Code    12  uart.o(i.UARTCharPut)
+    UARTConfigSetExpClk                      0x00000a09   Thumb Code   110  uart.o(i.UARTConfigSetExpClk)
+    clearDisplay                             0x00000a79   Thumb Code    54  uart_test.o(i.clearDisplay)
+    displayWinner                            0x00000abd   Thumb Code   416  uart_test.o(i.displayWinner)
+    getThePixelLocation                      0x00000ce1   Thumb Code    18  uart_test.o(i.getThePixelLocation)
+    main                                     0x00000cf9   Thumb Code   572  uart_test.o(i.main)
+    p1TurnActive                             0x00000f79   Thumb Code    76  uart_test.o(i.p1TurnActive)
+    p1TurnDeactive                           0x00000fdd   Thumb Code    76  uart_test.o(i.p1TurnDeactive)
+    p2TurnActive                             0x00001041   Thumb Code    76  uart_test.o(i.p2TurnActive)
+    p2TurnDeactive                           0x000010a5   Thumb Code    76  uart_test.o(i.p2TurnDeactive)
+    pixe2313Off                              0x00001109   Thumb Code   152  uart_test.o(i.pixe2313Off)
+    pixe2313On                               0x000011b9   Thumb Code   152  uart_test.o(i.pixe2313On)
+    pixe2318Off                              0x0000127d   Thumb Code   152  uart_test.o(i.pixe2318Off)
+    pixe2318On                               0x0000132d   Thumb Code   152  uart_test.o(i.pixe2318On)
+    pixe2323Off                              0x000013f1   Thumb Code   152  uart_test.o(i.pixe2323Off)
+    pixe2323On                               0x000014a1   Thumb Code   152  uart_test.o(i.pixe2323On)
+    pixe2328Off                              0x00001565   Thumb Code   152  uart_test.o(i.pixe2328Off)
+    pixe2328On                               0x00001615   Thumb Code   152  uart_test.o(i.pixe2328On)
+    pixe233Off                               0x000016d9   Thumb Code   160  uart_test.o(i.pixe233Off)
+    pixe233On                                0x0000178d   Thumb Code   152  uart_test.o(i.pixe233On)
+    pixe238Off                               0x00001851   Thumb Code   160  uart_test.o(i.pixe238Off)
+    pixe238On                                0x00001905   Thumb Code   152  uart_test.o(i.pixe238On)
+    pixe2813Off                              0x000019c9   Thumb Code   152  uart_test.o(i.pixe2813Off)
+    pixe2813On                               0x00001a79   Thumb Code   152  uart_test.o(i.pixe2813On)
+    pixe2818Off                              0x00001b3d   Thumb Code   152  uart_test.o(i.pixe2818Off)
+    pixe2818On                               0x00001bed   Thumb Code   152  uart_test.o(i.pixe2818On)
+    pixe2823Off                              0x00001cb1   Thumb Code   152  uart_test.o(i.pixe2823Off)
+    pixe2823On                               0x00001d61   Thumb Code   152  uart_test.o(i.pixe2823On)
+    pixe2828Off                              0x00001e25   Thumb Code   152  uart_test.o(i.pixe2828Off)
+    pixe2828On                               0x00001ed5   Thumb Code   152  uart_test.o(i.pixe2828On)
+    pixe283Off                               0x00001f99   Thumb Code   160  uart_test.o(i.pixe283Off)
+    pixe283On                                0x0000204d   Thumb Code   152  uart_test.o(i.pixe283On)
+    pixe288Off                               0x00002111   Thumb Code   160  uart_test.o(i.pixe288Off)
+    pixe288On                                0x000021c5   Thumb Code   152  uart_test.o(i.pixe288On)
+    pixe313Off                               0x00002289   Thumb Code   160  uart_test.o(i.pixe313Off)
+    pixe313On                                0x0000233d   Thumb Code   152  uart_test.o(i.pixe313On)
+    pixe318Off                               0x00002401   Thumb Code   160  uart_test.o(i.pixe318Off)
+    pixe318On                                0x000024b5   Thumb Code   152  uart_test.o(i.pixe318On)
+    pixe323Off                               0x00002579   Thumb Code   160  uart_test.o(i.pixe323Off)
+    pixe323On                                0x0000262d   Thumb Code   152  uart_test.o(i.pixe323On)
+    pixe328Off                               0x000026f1   Thumb Code   160  uart_test.o(i.pixe328Off)
+    pixe328On                                0x000027a5   Thumb Code   152  uart_test.o(i.pixe328On)
+    pixe3313Off                              0x00002869   Thumb Code   152  uart_test.o(i.pixe3313Off)
+    pixe3313On                               0x00002919   Thumb Code   152  uart_test.o(i.pixe3313On)
+    pixe3318Off                              0x000029dd   Thumb Code   152  uart_test.o(i.pixe3318Off)
+    pixe3318On                               0x00002a8d   Thumb Code   152  uart_test.o(i.pixe3318On)
+    pixe3323Off                              0x00002b51   Thumb Code   152  uart_test.o(i.pixe3323Off)
+    pixe3323On                               0x00002c01   Thumb Code   152  uart_test.o(i.pixe3323On)
+    pixe3328Off                              0x00002cc5   Thumb Code   152  uart_test.o(i.pixe3328Off)
+    pixe3328On                               0x00002d75   Thumb Code   152  uart_test.o(i.pixe3328On)
+    pixe333Off                               0x00002e39   Thumb Code   160  uart_test.o(i.pixe333Off)
+    pixe333On                                0x00002eed   Thumb Code   152  uart_test.o(i.pixe333On)
+    pixe338Off                               0x00002fb1   Thumb Code   160  uart_test.o(i.pixe338Off)
+    pixe338On                                0x00003065   Thumb Code   152  uart_test.o(i.pixe338On)
+    pixe33Off                                0x00003129   Thumb Code   160  uart_test.o(i.pixe33Off)
+    pixe33On                                 0x000031dd   Thumb Code   150  uart_test.o(i.pixe33On)
+    pixe38Off                                0x0000329d   Thumb Code   160  uart_test.o(i.pixe38Off)
+    pixe38On                                 0x00003351   Thumb Code   150  uart_test.o(i.pixe38On)
+    pixe813Off                               0x00003411   Thumb Code   160  uart_test.o(i.pixe813Off)
+    pixe813On                                0x000034c5   Thumb Code   152  uart_test.o(i.pixe813On)
+    pixe818Off                               0x00003589   Thumb Code   160  uart_test.o(i.pixe818Off)
+    pixe818On                                0x0000363d   Thumb Code   152  uart_test.o(i.pixe818On)
+    pixe823Off                               0x00003701   Thumb Code   160  uart_test.o(i.pixe823Off)
+    pixe823On                                0x000037b5   Thumb Code   152  uart_test.o(i.pixe823On)
+    pixe828Off                               0x00003879   Thumb Code   160  uart_test.o(i.pixe828Off)
+    pixe828On                                0x0000392d   Thumb Code   152  uart_test.o(i.pixe828On)
+    pixe83Off                                0x000039f1   Thumb Code   160  uart_test.o(i.pixe83Off)
+    pixe83On                                 0x00003aa5   Thumb Code   150  uart_test.o(i.pixe83On)
+    pixe88Off                                0x00003b65   Thumb Code   160  uart_test.o(i.pixe88Off)
+    pixe88On                                 0x00003c19   Thumb Code   150  uart_test.o(i.pixe88On)
+    pixel313Off                              0x00003cd9   Thumb Code   152  uart_test.o(i.pixel313Off)
+    pixel313On                               0x00003d89   Thumb Code   152  uart_test.o(i.pixel313On)
+    pixel318Off                              0x00003e4d   Thumb Code   152  uart_test.o(i.pixel318Off)
+    pixel318On                               0x00003efd   Thumb Code   152  uart_test.o(i.pixel318On)
+    pixel323Off                              0x00003fc1   Thumb Code   152  uart_test.o(i.pixel323Off)
+    pixel323On                               0x00004071   Thumb Code   152  uart_test.o(i.pixel323On)
+    pixel328Off                              0x00004135   Thumb Code   152  uart_test.o(i.pixel328Off)
+    pixel328On                               0x000041e5   Thumb Code   152  uart_test.o(i.pixel328On)
+    pixel33Off                               0x000042a9   Thumb Code   160  uart_test.o(i.pixel33Off)
+    pixel33On                                0x0000435d   Thumb Code   152  uart_test.o(i.pixel33On)
+    pixel38Off                               0x00004421   Thumb Code   160  uart_test.o(i.pixel38Off)
+    pixel38On                                0x000044d5   Thumb Code   152  uart_test.o(i.pixel38On)
+    pixel813Off                              0x00004599   Thumb Code   152  uart_test.o(i.pixel813Off)
+    pixel813On                               0x00004649   Thumb Code   152  uart_test.o(i.pixel813On)
+    pixel818Off                              0x0000470d   Thumb Code   152  uart_test.o(i.pixel818Off)
+    pixel818On                               0x000047bd   Thumb Code   152  uart_test.o(i.pixel818On)
+    pixel823Off                              0x00004881   Thumb Code   152  uart_test.o(i.pixel823Off)
+    pixel823On                               0x00004931   Thumb Code   152  uart_test.o(i.pixel823On)
+    pixel828Off                              0x000049f5   Thumb Code   152  uart_test.o(i.pixel828Off)
+    pixel828On                               0x00004aa5   Thumb Code   152  uart_test.o(i.pixel828On)
+    pixel83Off                               0x00004b69   Thumb Code   160  uart_test.o(i.pixel83Off)
+    pixel83On                                0x00004c1d   Thumb Code   152  uart_test.o(i.pixel83On)
+    pixel88Off                               0x00004ce1   Thumb Code   160  uart_test.o(i.pixel88Off)
+    pixel88On                                0x00004d95   Thumb Code   152  uart_test.o(i.pixel88On)
+    setBoard                                 0x00004e59   Thumb Code    48  uart_test.o(i.setBoard)
+    setDefaultBoard                          0x00004e89   Thumb Code   538  uart_test.o(i.setDefaultBoard)
+    switchPixel                              0x00005149   Thumb Code  1124  uart_test.o(i.switchPixel)
+    titleCluster1                            0x000055ad   Thumb Code  1200  uart_test.o(i.titleCluster1)
+    titleCluster2                            0x00005a5d   Thumb Code   736  uart_test.o(i.titleCluster2)
+    titleCluster3                            0x00005e49   Thumb Code   274  uart_test.o(i.titleCluster3)
+    titleClusterP1                           0x00005fb9   Thumb Code   472  uart_test.o(i.titleClusterP1)
+    titleClusterP2                           0x0000623d   Thumb Code   472  uart_test.o(i.titleClusterP2)
+    winning_condition                        0x000064c1   Thumb Code  3352  uart_test.o(i.winning_condition)
+    _fp_init                                 0x000071d9   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x000071e1   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x000071e1   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x00007660   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00007680   Number         0  anon$$obj.o(Region$$Table)
+    gameMatrix                               0x20000000   Data         168  uart_test.o(.data)
+    i                                        0x200000a8   Data           4  uart_test.o(.data)
+    j                                        0x200000ac   Data           4  uart_test.o(.data)
+    k                                        0x200000b0   Data           4  uart_test.o(.data)
+    player                                   0x200000b4   Data           4  uart_test.o(.data)
+    rowloc                                   0x200000b8   Data           4  uart_test.o(.data)
+    colloc                                   0x200000bc   Data           4  uart_test.o(.data)
+    location                                 0x200000c0   Data           4  uart_test.o(.data)
+    occupy                                   0x200000c4   Data           4  uart_test.o(.data)
+    winner                                   0x200000c8   Data           4  uart_test.o(.data)
+    restart                                  0x200000cc   Data           4  uart_test.o(.data)
+    taken_cells                              0x200000d0   Data         336  uart_test.o(.bss)
+    __libspace_start                         0x20000220   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x20000280   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00007750, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00007680, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000288   Code   RO            3  * RESET               startup_rvmdk.o
+    0x00000288   0x00000288   0x00000008   Code   RO         1803  * !!!main             c_w.l(__main.o)
+    0x00000290   0x00000290   0x00000034   Code   RO         1962    !!!scatter          c_w.l(__scatter.o)
+    0x000002c4   0x000002c4   0x0000001a   Code   RO         1964    !!handler_copy      c_w.l(__scatter_copy.o)
+    0x000002de   0x000002de   0x00000002   PAD
+    0x000002e0   0x000002e0   0x0000001c   Code   RO         1966    !!handler_zi        c_w.l(__scatter_zi.o)
+    0x000002fc   0x000002fc   0x00000002   Code   RO         1830    .ARM.Collect$$libinit$$00000000  c_w.l(libinit.o)
+    0x000002fe   0x000002fe   0x00000004   Code   RO         1836    .ARM.Collect$$libinit$$00000001  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1839    .ARM.Collect$$libinit$$00000004  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1842    .ARM.Collect$$libinit$$0000000A  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1844    .ARM.Collect$$libinit$$0000000C  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1846    .ARM.Collect$$libinit$$0000000E  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1849    .ARM.Collect$$libinit$$00000011  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1851    .ARM.Collect$$libinit$$00000013  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1853    .ARM.Collect$$libinit$$00000015  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1855    .ARM.Collect$$libinit$$00000017  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1857    .ARM.Collect$$libinit$$00000019  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1859    .ARM.Collect$$libinit$$0000001B  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1861    .ARM.Collect$$libinit$$0000001D  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1863    .ARM.Collect$$libinit$$0000001F  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1865    .ARM.Collect$$libinit$$00000021  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1867    .ARM.Collect$$libinit$$00000023  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1869    .ARM.Collect$$libinit$$00000025  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1873    .ARM.Collect$$libinit$$0000002C  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1875    .ARM.Collect$$libinit$$0000002E  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1877    .ARM.Collect$$libinit$$00000030  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000000   Code   RO         1879    .ARM.Collect$$libinit$$00000032  c_w.l(libinit2.o)
+    0x00000302   0x00000302   0x00000002   Code   RO         1880    .ARM.Collect$$libinit$$00000033  c_w.l(libinit2.o)
+    0x00000304   0x00000304   0x00000002   Code   RO         1900    .ARM.Collect$$libshutdown$$00000000  c_w.l(libshutdown.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1913    .ARM.Collect$$libshutdown$$00000002  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1915    .ARM.Collect$$libshutdown$$00000004  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1917    .ARM.Collect$$libshutdown$$00000006  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1920    .ARM.Collect$$libshutdown$$00000009  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1923    .ARM.Collect$$libshutdown$$0000000C  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1925    .ARM.Collect$$libshutdown$$0000000E  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000000   Code   RO         1928    .ARM.Collect$$libshutdown$$00000011  c_w.l(libshutdown2.o)
+    0x00000306   0x00000306   0x00000002   Code   RO         1929    .ARM.Collect$$libshutdown$$00000012  c_w.l(libshutdown2.o)
+    0x00000308   0x00000308   0x00000000   Code   RO         1805    .ARM.Collect$$rtentry$$00000000  c_w.l(__rtentry.o)
+    0x00000308   0x00000308   0x00000000   Code   RO         1807    .ARM.Collect$$rtentry$$00000002  c_w.l(__rtentry2.o)
+    0x00000308   0x00000308   0x00000006   Code   RO         1819    .ARM.Collect$$rtentry$$00000004  c_w.l(__rtentry4.o)
+    0x0000030e   0x0000030e   0x00000000   Code   RO         1809    .ARM.Collect$$rtentry$$00000009  c_w.l(__rtentry2.o)
+    0x0000030e   0x0000030e   0x00000004   Code   RO         1810    .ARM.Collect$$rtentry$$0000000A  c_w.l(__rtentry2.o)
+    0x00000312   0x00000312   0x00000000   Code   RO         1812    .ARM.Collect$$rtentry$$0000000C  c_w.l(__rtentry2.o)
+    0x00000312   0x00000312   0x00000008   Code   RO         1813    .ARM.Collect$$rtentry$$0000000D  c_w.l(__rtentry2.o)
+    0x0000031a   0x0000031a   0x00000002   Code   RO         1834    .ARM.Collect$$rtexit$$00000000  c_w.l(rtexit.o)
+    0x0000031c   0x0000031c   0x00000000   Code   RO         1882    .ARM.Collect$$rtexit$$00000002  c_w.l(rtexit2.o)
+    0x0000031c   0x0000031c   0x00000004   Code   RO         1883    .ARM.Collect$$rtexit$$00000003  c_w.l(rtexit2.o)
+    0x00000320   0x00000320   0x00000006   Code   RO         1884    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
+    0x00000326   0x00000326   0x00000002   PAD
+    0x00000328   0x00000328   0x00000006   Code   RO         1028    .emb_text           driverlib.lib(sysctl.o)
+    0x0000032e   0x0000032e   0x00000002   PAD
+    0x00000330   0x00000330   0x00000018   Code   RO            4    .text               startup_rvmdk.o
+    0x00000348   0x00000348   0x00000064   Code   RO         1799    .text               c_w.l(rt_memcpy_w.o)
+    0x000003ac   0x000003ac   0x00000006   Code   RO         1801    .text               c_w.l(heapauxi.o)
+    0x000003b2   0x000003b2   0x0000004a   Code   RO         1821    .text               c_w.l(sys_stackheap_outer.o)
+    0x000003fc   0x000003fc   0x00000012   Code   RO         1823    .text               c_w.l(exit.o)
+    0x0000040e   0x0000040e   0x00000002   PAD
+    0x00000410   0x00000410   0x00000008   Code   RO         1831    .text               c_w.l(libspace.o)
+    0x00000418   0x00000418   0x0000000c   Code   RO         1892    .text               c_w.l(sys_exit.o)
+    0x00000424   0x00000424   0x00000002   Code   RO         1903    .text               c_w.l(use_no_semi.o)
+    0x00000426   0x00000426   0x00000000   Code   RO         1905    .text               c_w.l(indicate_semi.o)
+    0x00000426   0x00000426   0x00000028   Code   RO          696    i.GPIODirModeSet    driverlib.lib(gpio.o)
+    0x0000044e   0x0000044e   0x00000002   PAD
+    0x00000450   0x00000450   0x00000170   Code   RO          708    i.GPIOPadConfigSet  driverlib.lib(gpio.o)
+    0x000005c0   0x000005c0   0x00000044   Code   RO          709    i.GPIOPinConfigure  driverlib.lib(gpio.o)
+    0x00000604   0x00000604   0x0000001c   Code   RO          732    i.GPIOPinTypeUART   driverlib.lib(gpio.o)
+    0x00000620   0x00000620   0x00000074   Code   RO           11    i.GPIOPortF_Handler  uart_test.o
+    0x00000694   0x00000694   0x00000004   Code   RO           12    i.IntGlobalEnable   uart_test.o
+    0x00000698   0x00000698   0x00000064   Code   RO           13    i.Interrupt_Init    uart_test.o
+    0x000006fc   0x000006fc   0x00000064   Code   RO           14    i.PortFunctionInit  uart_test.o
+    0x00000760   0x00000760   0x00000154   Code   RO         1031    i.SysCtlClockGet    driverlib.lib(sysctl.o)
+    0x000008b4   0x000008b4   0x00000120   Code   RO         1033    i.SysCtlClockSet    driverlib.lib(sysctl.o)
+    0x000009d4   0x000009d4   0x00000028   Code   RO         1062    i.SysCtlPeripheralEnable  driverlib.lib(sysctl.o)
+    0x000009fc   0x000009fc   0x0000000c   Code   RO         1390    i.UARTCharPut       driverlib.lib(uart.o)
+    0x00000a08   0x00000a08   0x0000006e   Code   RO         1396    i.UARTConfigSetExpClk  driverlib.lib(uart.o)
+    0x00000a76   0x00000a76   0x00000002   PAD
+    0x00000a78   0x00000a78   0x00000044   Code   RO           15    i.clearDisplay      uart_test.o
+    0x00000abc   0x00000abc   0x00000224   Code   RO           16    i.displayWinner     uart_test.o
+    0x00000ce0   0x00000ce0   0x00000018   Code   RO           17    i.getThePixelLocation  uart_test.o
+    0x00000cf8   0x00000cf8   0x00000280   Code   RO           18    i.main              uart_test.o
+    0x00000f78   0x00000f78   0x00000064   Code   RO           19    i.p1TurnActive      uart_test.o
+    0x00000fdc   0x00000fdc   0x00000064   Code   RO           20    i.p1TurnDeactive    uart_test.o
+    0x00001040   0x00001040   0x00000064   Code   RO           21    i.p2TurnActive      uart_test.o
+    0x000010a4   0x000010a4   0x00000064   Code   RO           22    i.p2TurnDeactive    uart_test.o
+    0x00001108   0x00001108   0x000000b0   Code   RO           23    i.pixe2313Off       uart_test.o
+    0x000011b8   0x000011b8   0x000000c4   Code   RO           24    i.pixe2313On        uart_test.o
+    0x0000127c   0x0000127c   0x000000b0   Code   RO           25    i.pixe2318Off       uart_test.o
+    0x0000132c   0x0000132c   0x000000c4   Code   RO           26    i.pixe2318On        uart_test.o
+    0x000013f0   0x000013f0   0x000000b0   Code   RO           27    i.pixe2323Off       uart_test.o
+    0x000014a0   0x000014a0   0x000000c4   Code   RO           28    i.pixe2323On        uart_test.o
+    0x00001564   0x00001564   0x000000b0   Code   RO           29    i.pixe2328Off       uart_test.o
+    0x00001614   0x00001614   0x000000c4   Code   RO           30    i.pixe2328On        uart_test.o
+    0x000016d8   0x000016d8   0x000000b4   Code   RO           31    i.pixe233Off        uart_test.o
+    0x0000178c   0x0000178c   0x000000c4   Code   RO           32    i.pixe233On         uart_test.o
+    0x00001850   0x00001850   0x000000b4   Code   RO           33    i.pixe238Off        uart_test.o
+    0x00001904   0x00001904   0x000000c4   Code   RO           34    i.pixe238On         uart_test.o
+    0x000019c8   0x000019c8   0x000000b0   Code   RO           35    i.pixe2813Off       uart_test.o
+    0x00001a78   0x00001a78   0x000000c4   Code   RO           36    i.pixe2813On        uart_test.o
+    0x00001b3c   0x00001b3c   0x000000b0   Code   RO           37    i.pixe2818Off       uart_test.o
+    0x00001bec   0x00001bec   0x000000c4   Code   RO           38    i.pixe2818On        uart_test.o
+    0x00001cb0   0x00001cb0   0x000000b0   Code   RO           39    i.pixe2823Off       uart_test.o
+    0x00001d60   0x00001d60   0x000000c4   Code   RO           40    i.pixe2823On        uart_test.o
+    0x00001e24   0x00001e24   0x000000b0   Code   RO           41    i.pixe2828Off       uart_test.o
+    0x00001ed4   0x00001ed4   0x000000c4   Code   RO           42    i.pixe2828On        uart_test.o
+    0x00001f98   0x00001f98   0x000000b4   Code   RO           43    i.pixe283Off        uart_test.o
+    0x0000204c   0x0000204c   0x000000c4   Code   RO           44    i.pixe283On         uart_test.o
+    0x00002110   0x00002110   0x000000b4   Code   RO           45    i.pixe288Off        uart_test.o
+    0x000021c4   0x000021c4   0x000000c4   Code   RO           46    i.pixe288On         uart_test.o
+    0x00002288   0x00002288   0x000000b4   Code   RO           47    i.pixe313Off        uart_test.o
+    0x0000233c   0x0000233c   0x000000c4   Code   RO           48    i.pixe313On         uart_test.o
+    0x00002400   0x00002400   0x000000b4   Code   RO           49    i.pixe318Off        uart_test.o
+    0x000024b4   0x000024b4   0x000000c4   Code   RO           50    i.pixe318On         uart_test.o
+    0x00002578   0x00002578   0x000000b4   Code   RO           51    i.pixe323Off        uart_test.o
+    0x0000262c   0x0000262c   0x000000c4   Code   RO           52    i.pixe323On         uart_test.o
+    0x000026f0   0x000026f0   0x000000b4   Code   RO           53    i.pixe328Off        uart_test.o
+    0x000027a4   0x000027a4   0x000000c4   Code   RO           54    i.pixe328On         uart_test.o
+    0x00002868   0x00002868   0x000000b0   Code   RO           55    i.pixe3313Off       uart_test.o
+    0x00002918   0x00002918   0x000000c4   Code   RO           56    i.pixe3313On        uart_test.o
+    0x000029dc   0x000029dc   0x000000b0   Code   RO           57    i.pixe3318Off       uart_test.o
+    0x00002a8c   0x00002a8c   0x000000c4   Code   RO           58    i.pixe3318On        uart_test.o
+    0x00002b50   0x00002b50   0x000000b0   Code   RO           59    i.pixe3323Off       uart_test.o
+    0x00002c00   0x00002c00   0x000000c4   Code   RO           60    i.pixe3323On        uart_test.o
+    0x00002cc4   0x00002cc4   0x000000b0   Code   RO           61    i.pixe3328Off       uart_test.o
+    0x00002d74   0x00002d74   0x000000c4   Code   RO           62    i.pixe3328On        uart_test.o
+    0x00002e38   0x00002e38   0x000000b4   Code   RO           63    i.pixe333Off        uart_test.o
+    0x00002eec   0x00002eec   0x000000c4   Code   RO           64    i.pixe333On         uart_test.o
+    0x00002fb0   0x00002fb0   0x000000b4   Code   RO           65    i.pixe338Off        uart_test.o
+    0x00003064   0x00003064   0x000000c4   Code   RO           66    i.pixe338On         uart_test.o
+    0x00003128   0x00003128   0x000000b4   Code   RO           67    i.pixe33Off         uart_test.o
+    0x000031dc   0x000031dc   0x000000c0   Code   RO           68    i.pixe33On          uart_test.o
+    0x0000329c   0x0000329c   0x000000b4   Code   RO           69    i.pixe38Off         uart_test.o
+    0x00003350   0x00003350   0x000000c0   Code   RO           70    i.pixe38On          uart_test.o
+    0x00003410   0x00003410   0x000000b4   Code   RO           71    i.pixe813Off        uart_test.o
+    0x000034c4   0x000034c4   0x000000c4   Code   RO           72    i.pixe813On         uart_test.o
+    0x00003588   0x00003588   0x000000b4   Code   RO           73    i.pixe818Off        uart_test.o
+    0x0000363c   0x0000363c   0x000000c4   Code   RO           74    i.pixe818On         uart_test.o
+    0x00003700   0x00003700   0x000000b4   Code   RO           75    i.pixe823Off        uart_test.o
+    0x000037b4   0x000037b4   0x000000c4   Code   RO           76    i.pixe823On         uart_test.o
+    0x00003878   0x00003878   0x000000b4   Code   RO           77    i.pixe828Off        uart_test.o
+    0x0000392c   0x0000392c   0x000000c4   Code   RO           78    i.pixe828On         uart_test.o
+    0x000039f0   0x000039f0   0x000000b4   Code   RO           79    i.pixe83Off         uart_test.o
+    0x00003aa4   0x00003aa4   0x000000c0   Code   RO           80    i.pixe83On          uart_test.o
+    0x00003b64   0x00003b64   0x000000b4   Code   RO           81    i.pixe88Off         uart_test.o
+    0x00003c18   0x00003c18   0x000000c0   Code   RO           82    i.pixe88On          uart_test.o
+    0x00003cd8   0x00003cd8   0x000000b0   Code   RO           83    i.pixel313Off       uart_test.o
+    0x00003d88   0x00003d88   0x000000c4   Code   RO           84    i.pixel313On        uart_test.o
+    0x00003e4c   0x00003e4c   0x000000b0   Code   RO           85    i.pixel318Off       uart_test.o
+    0x00003efc   0x00003efc   0x000000c4   Code   RO           86    i.pixel318On        uart_test.o
+    0x00003fc0   0x00003fc0   0x000000b0   Code   RO           87    i.pixel323Off       uart_test.o
+    0x00004070   0x00004070   0x000000c4   Code   RO           88    i.pixel323On        uart_test.o
+    0x00004134   0x00004134   0x000000b0   Code   RO           89    i.pixel328Off       uart_test.o
+    0x000041e4   0x000041e4   0x000000c4   Code   RO           90    i.pixel328On        uart_test.o
+    0x000042a8   0x000042a8   0x000000b4   Code   RO           91    i.pixel33Off        uart_test.o
+    0x0000435c   0x0000435c   0x000000c4   Code   RO           92    i.pixel33On         uart_test.o
+    0x00004420   0x00004420   0x000000b4   Code   RO           93    i.pixel38Off        uart_test.o
+    0x000044d4   0x000044d4   0x000000c4   Code   RO           94    i.pixel38On         uart_test.o
+    0x00004598   0x00004598   0x000000b0   Code   RO           95    i.pixel813Off       uart_test.o
+    0x00004648   0x00004648   0x000000c4   Code   RO           96    i.pixel813On        uart_test.o
+    0x0000470c   0x0000470c   0x000000b0   Code   RO           97    i.pixel818Off       uart_test.o
+    0x000047bc   0x000047bc   0x000000c4   Code   RO           98    i.pixel818On        uart_test.o
+    0x00004880   0x00004880   0x000000b0   Code   RO           99    i.pixel823Off       uart_test.o
+    0x00004930   0x00004930   0x000000c4   Code   RO          100    i.pixel823On        uart_test.o
+    0x000049f4   0x000049f4   0x000000b0   Code   RO          101    i.pixel828Off       uart_test.o
+    0x00004aa4   0x00004aa4   0x000000c4   Code   RO          102    i.pixel828On        uart_test.o
+    0x00004b68   0x00004b68   0x000000b4   Code   RO          103    i.pixel83Off        uart_test.o
+    0x00004c1c   0x00004c1c   0x000000c4   Code   RO          104    i.pixel83On         uart_test.o
+    0x00004ce0   0x00004ce0   0x000000b4   Code   RO          105    i.pixel88Off        uart_test.o
+    0x00004d94   0x00004d94   0x000000c4   Code   RO          106    i.pixel88On         uart_test.o
+    0x00004e58   0x00004e58   0x00000030   Code   RO          107    i.setBoard          uart_test.o
+    0x00004e88   0x00004e88   0x000002c0   Code   RO          108    i.setDefaultBoard   uart_test.o
+    0x00005148   0x00005148   0x00000464   Code   RO          109    i.switchPixel       uart_test.o
+    0x000055ac   0x000055ac   0x000004b0   Code   RO          110    i.titleCluster1     uart_test.o
+    0x00005a5c   0x00005a5c   0x000003ec   Code   RO          111    i.titleCluster2     uart_test.o
+    0x00005e48   0x00005e48   0x00000170   Code   RO          112    i.titleCluster3     uart_test.o
+    0x00005fb8   0x00005fb8   0x00000284   Code   RO          113    i.titleClusterP1    uart_test.o
+    0x0000623c   0x0000623c   0x00000284   Code   RO          114    i.titleClusterP2    uart_test.o
+    0x000064c0   0x000064c0   0x00000d18   Code   RO          115    i.winning_condition  uart_test.o
+    0x000071d8   0x000071d8   0x0000000a   Code   RO         1890    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x000071e2   0x000071e2   0x00000002   PAD
+    0x000071e4   0x000071e4   0x00000228   Data   RO          741    .constdata          driverlib.lib(gpio.o)
+    0x0000740c   0x0000740c   0x00000254   Data   RO         1084    .constdata          driverlib.lib(sysctl.o)
+    0x00007660   0x00007660   0x00000020   Data   RO         1960    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00007680, Size: 0x000000d0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00007680   0x000000d0   Data   RW          117    .data               uart_test.o
+
+
+    Execution Region ER_ZI (Exec base: 0x200000d0, Load base: 0x00007750, Size: 0x000002b0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x200000d0        -       0x00000150   Zero   RW          116    .bss                uart_test.o
+    0x20000220        -       0x00000060   Zero   RW         1832    .bss                c_w.l(libspace.o)
+    0x20000280        -       0x00000000   Zero   RW            2    HEAP                startup_rvmdk.o
+    0x20000280        -       0x00000100   Zero   RW            1    STACK               startup_rvmdk.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       672        636          0          0        256        556   startup_rvmdk.o
+     26784       4312          0        208        336      89488   uart_test.o
+
+    ----------------------------------------------------------------------
+     27456       4948         32        208        592      90044   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         8          0          0          0          0         68   __main.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         6          0          0          0          0          0   __rtentry4.o
+        52          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        18          0          0          0          0         80   exit.o
+         6          0          0          0          0        152   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         6          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+       100          0          0          0          0         80   rt_memcpy_w.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         68   sys_exit.o
+        74          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+       504         22        552          0          0       6629   gpio.o
+       674         58        596          0          0       4395   sysctl.o
+       122          0          0          0          0       2077   uart.o
+        10          0          0          0          0        116   fpinit.o
+
+    ----------------------------------------------------------------------
+      1700         96       1148          0         96      13881   Library Totals
+        14          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       376         16          0          0         96        664   c_w.l
+      1300         80       1148          0          0      13101   driverlib.lib
+        10          0          0          0          0        116   fz_wm.l
+
+    ----------------------------------------------------------------------
+      1700         96       1148          0         96      13881   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     29156       5044       1180        208        688      93017   Grand Totals
+     29156       5044       1180        208        688      93017   ELF Image Totals
+     29156       5044       1180        208          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                30336 (  29.63kB)
+    Total RW  Size (RW Data + ZI Data)               896 (   0.88kB)
+    Total ROM Size (Code + RO Data + RW Data)      30544 (  29.83kB)
+
+==============================================================================
+

@@ -1,0 +1,14 @@
+.\objects\uart_test.o: UART_Test.c
+.\objects\uart_test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uart_test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\uart_test.o: ..\..\..\..\inc/tm4c123gh6pm.h
+.\objects\uart_test.o: ..\..\..\..\inc/hw_memmap.h
+.\objects\uart_test.o: ..\..\..\..\driverlib/gpio.h
+.\objects\uart_test.o: ..\..\..\..\driverlib/interrupt.h
+.\objects\uart_test.o: ..\..\..\..\driverlib/pin_map.h
+.\objects\uart_test.o: ..\..\..\..\driverlib/rom_map.h
+.\objects\uart_test.o: ..\..\..\..\driverlib/sysctl.h
+.\objects\uart_test.o: ..\..\..\..\driverlib/uart.h
+.\objects\uart_test.o: DisplayCommands.h
+.\objects\uart_test.o: GameBoard.h
+.\objects\uart_test.o: WinnerCheck.h
